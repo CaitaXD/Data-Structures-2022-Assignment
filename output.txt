@@ -1,0 +1,16 @@
+Calorias Calculadas para day1.csv segundo a tabela 1000Sorted.csv.
+
+150g de Activia (150 a cada 100g) = 111.00
+110g de Tangerine (110 a cada 100g) = 58.30
+120g de Bagel (120 a cada 100g) = 308.40
+200g de Coffee (200 a cada 100g) = 2.00
+200g de Beef Fillet (200 a cada 100g) = 378.00
+150g de Rigatoni (150 a cada 100g) = 529.50
+100g de Banoffee Pie (100 a cada 100g) = 395.00
+50g de Arugula (50 a cada 100g) = 12.50
+5g de Caesar Dressing (5 a cada 100g) = 21.45
+30g de Camembert (30 a cada 100g) = 90.00
+50g de Chocolate (50 a cada 100g) = 264.50
+200g de White Wine (200 a cada 100g) = 164.00
+
+Total: 2334.65

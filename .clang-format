@@ -1,0 +1,19 @@
+
+BasedOnStyle: Microsoft
+IndentWidth: 4
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros : Consecutive
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AlignConsecutiveAssignments: Consecutive
+AlignEscapedNewlines : Right
+AllowShortEnumsOnASingleLine : true
+AllowShortFunctionsOnASingleLine : All
+
+BinPackArguments: false
+BinPackParameters: false
+
+ExperimentalAutoDetectBinPacking: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+IndentGotoLabels: true

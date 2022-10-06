@@ -1,0 +1,52 @@
+||============== ONE RUN BENCHMARK ========================||
+||================ Binary Search Tree ================
+|| KiloCalories:                  2334.65
+|| Comparisons:                     3232
+|| Height:                          867
+|| Rotations:                       0
+|| Nodes:                           1000
+|| Time:                            0.01
+||================ Binary Search Tree ================
+||================ Red Black Tree ================
+|| KiloCalories:                  2334.65
+|| Comparisons:                     123
+|| Height:                          17
+|| Rotations:                       1044
+|| Nodes:                           1000
+|| Time:                            0.00
+||================ Red Black Tree ================
+||================ AVL Tree ================
+|| KiloCalories:                  2334.65
+|| Comparisons:                     131
+|| Height:                          10
+|| Rotations:                       1051
+|| Nodes:                           1000
+|| Time:                            0.00
+||================ AVL Tree ================
+||============== ONE RUN BENCHMARK ========================||
+
+||============== INSERTION ONLY BENCHMARK ==============||
+||================ Red Black Tree ================
+|| Nodes:        10000
+|| Height:       18
+|| Rotations:    6053
+|| Time taken:   0.011000
+||================ Red Black Tree ================
+||================ AVL Tree ================
+|| Nodes:        10000
+|| Height:       14
+|| Rotations:    6060
+|| Time taken:   0.007000
+||================ AVL Tree ================
+||============== INSERTION ONLY BENCHMARK ==============||
+
+||============== SEARCH ONLY BENCHMARK =================||
+||================ Red Black Tree ================
+|| Comparisons: 1240
+|| Time taken:  0.00
+||================ Red Black Tree ================
+||================ AVL Tree ================
+|| Comparisons: 1330
+|| Time taken:  0.00
+||================ AVL Tree ================
+||============== SEARCH ONLY BENCHMARK =================||
