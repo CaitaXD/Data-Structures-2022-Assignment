@@ -13,7 +13,6 @@ typedef void (*delete_fn)(Collection *const this);
 typedef Collection *(*insert_fn)(Collection *const this, void *const data, comparer cmp);
 typedef void (*remove_from_fn)(Collection *const this, void *const data);
 typedef void (*for_each_fn)(Collection *const this, action action);
-typedef void *(*reduce_fn)(Collection *const this, bin_func func);
 typedef int (*count_fn)(Collection *const this);
 typedef Collection *(*find_fn)(Collection *const this, void *const data, comparer cmp);
 typedef int (*index_of_fn)(Collection *const this, void *const data, comparer cmp);
@@ -23,7 +22,6 @@ typedef struct COLVTB
     delete_fn delete;
     insert_fn   insert;
     for_each_fn for_each;
-    reduce_fn   reduce;
     count_fn    count;
     find_fn     find;
     index_of_fn index_of;
