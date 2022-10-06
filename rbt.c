@@ -177,11 +177,14 @@ RBT *rbt_rotate(RBT **treeRoot, RBT *parent, enum direction dir)
 
 #define IS_BLACK(N) (!N->color) // when not using sentinel N == NULL || N->color == black
 #define byte        unsigned char
+
 /**
  * @brief Preserves the red black tree properties.
  * @param treeRoot Pointer to the root of the tree.
  * @param node Node to be inserted.
  * @param dir Direction of the node, i.e it was inserted to the left or right of its parent.
+ * Source code: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#Insertion
+ * I don't normally use goto but the algorithm is easier to understand with it.
  */
 void rbt_insert_fix(RBT **treeRoot, RBT *node, enum direction dir)
 {
@@ -235,6 +238,7 @@ void rbt_insert_fix(RBT **treeRoot, RBT *node, enum direction dir)
             node   = parent;
             parent = granps->child[dir];
         }
+    // fall through to CASE6
     CASE6: // Rotate the grandparent and flip the colors
 
         rbt_rotate(treeRoot, granps, 1 - dir);
