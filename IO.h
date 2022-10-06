@@ -125,8 +125,8 @@ void deserialize_csv(Collection **const xs, FILE *const stream_reader)
     for (// clang-format off
         kvp *pair = NULL; 
         fgets(BUFFER, KB, stream_reader); 
-        //add(xs, pair, kcmp)
-        *xs = insert(*xs, pair, kcmp)
+        add(xs, pair, kcmp)
+        //*xs = insert(*xs, pair, kcmp)
     ) pair = kvp_parse_new(BUFFER, ";");
     // clang-format on
 }

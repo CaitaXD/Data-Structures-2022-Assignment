@@ -10,11 +10,11 @@
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [
-                ".\\1000Shuffled.csv",
-                ".\\day1.csv",
+                ".\\OrderedInsertion30000.csv",
+                ".\\OrderedInsertion30000.csv",
                 ".\\output.txt",
                 ".\\log.txt",
-                "100"
+                "1"
             ],
             "cwd": "${workspaceFolder}",
         }

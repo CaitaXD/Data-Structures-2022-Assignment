@@ -50,6 +50,7 @@ Collection *const avl_new()
     avl->vtable = AVL_VTABLE;
     return (Collection *)avl;
 }
+#define ever (;;)
 void       avl_add(AVL **const avl, void *const data, comparer cmp) { *avl = avl_insert(*avl, data, cmp); }
 AVL *const avl_insert(AVL *const avl, void *const data, comparer cmp)
 {

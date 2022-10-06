@@ -1,52 +1,44 @@
 ||============== ONE RUN BENCHMARK ========================||
-||================ Binary Search Tree ================
-|| KiloCalories:                  2334.65
-|| Comparisons:                     167
-|| Height:                          22
-|| Rotations:                       0
-|| Nodes:                           1000
-|| Time:                            0.00
-||================ Binary Search Tree ================
 ||================ Red Black Tree ================
-|| KiloCalories:                  2334.65
-|| Comparisons:                     140
-|| Height:                          12
-|| Rotations:                       558
-|| Nodes:                           1000
-|| Time:                            0.00
+|| KiloCalories:                  1573260083.30
+|| Comparisons:                     38771932
+|| Height:                          39
+|| Rotations:                       1999961
+|| Nodes:                           2000000
+|| Time:                            3.95
 ||================ Red Black Tree ================
 ||================ AVL Tree ================
-|| KiloCalories:                  2334.65
-|| Comparisons:                     136
-|| Height:                          12
-|| Rotations:                       671
-|| Nodes:                           1000
-|| Time:                            0.00
+|| KiloCalories:                  1573260083.30
+|| Comparisons:                     38008390
+|| Height:                          21
+|| Rotations:                       1999979
+|| Nodes:                           2000000
+|| Time:                            3.66
 ||================ AVL Tree ================
 ||============== ONE RUN BENCHMARK ========================||
 
 ||============== INSERTION ONLY BENCHMARK ==============||
 ||================ Red Black Tree ================
-|| Nodes:        100000
-|| Height:       23
-|| Rotations:    89965
-|| Time taken:   0.411000
+|| Nodes:        2000000
+|| Height:       39
+|| Rotations:    1999961
+|| Time taken:   2.643000
 ||================ Red Black Tree ================
 ||================ AVL Tree ================
-|| Nodes:        100000
-|| Height:       19
-|| Rotations:    93720
-|| Time taken:   0.433000
+|| Nodes:        2000000
+|| Height:       21
+|| Rotations:    1999979
+|| Time taken:   1.999000
 ||================ AVL Tree ================
 ||============== INSERTION ONLY BENCHMARK ==============||
 
 ||============== SEARCH ONLY BENCHMARK =================||
 ||================ Red Black Tree ================
-|| Comparisons: 14600
-|| Time taken:  0.00
+|| Comparisons: 38771932
+|| Time taken:  1.45
 ||================ Red Black Tree ================
 ||================ AVL Tree ================
-|| Comparisons: 14000
-|| Time taken:  0.00
+|| Comparisons: 38008390
+|| Time taken:  1.48
 ||================ AVL Tree ================
 ||============== SEARCH ONLY BENCHMARK =================||

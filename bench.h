@@ -73,15 +73,15 @@ void TEST_BATERY(struct context ctx, int N, FILE *out)
     fprintf(out, "\n");
 
     //FILE *bstShape = fopen("BST Shape.txt", "w");
-    FILE *rbtShape = fopen("RBT Shape.txt", "w");
-    FILE *avlShape = fopen("AVL Shape.txt", "w");
+    //FILE *rbtShape = fopen("RBT Shape.txt", "w");
+    //FILE *avlShape = fopen("AVL Shape.txt", "w");
 
     // This bad boy crashes the program
     //pretty_print((BST *)bst1, (cstringfier)pair_tocstring, bstShape);
-    pretty_print((BST *)rbt1, (cstringfier)pair_tocstring, rbtShape);
-    pretty_print((BST *)avl1, (cstringfier)pair_tocstring, avlShape);
+    //pretty_print((BST *)rbt1, (cstringfier)pair_tocstring, rbtShape);
+    //pretty_print((BST *)avl1, (cstringfier)pair_tocstring, avlShape);
 
-    //Collection *bst = bst_new();
+    Collection *bst = bst_new();
     Collection *rbt = rbt_new();
     Collection *avl = avl_new();
 
@@ -91,21 +91,18 @@ void TEST_BATERY(struct context ctx, int N, FILE *out)
     fprintf(out, "||============== INSERTION ONLY BENCHMARK ==============||\n");
     INSERT_N_TEST("Red Black Tree", &rbt, ctx.calory_file.filestream, N, out);
     INSERT_N_TEST("AVL Tree", &avl, ctx.calory_file.filestream, N, out);
-    // and this one takes forever to run
-    //INSERT_N_TEST("Binary Search Tree", &bst, ctx.calory_file.filestream, N, out);
+    INSERT_N_TEST("Binary Search Tree", &bst, ctx.calory_file.filestream, N, out);
     fprintf(out, "||============== INSERTION ONLY BENCHMARK ==============||\n");
     fprintf(out, "\n");
     fprintf(out, "||============== SEARCH ONLY BENCHMARK =================||\n");
     SEARCHES_N_TEST("Red Black Tree", rbt, ctx.food_file.filestream, N, out);
     SEARCHES_N_TEST("AVL Tree", avl, ctx.food_file.filestream, N, out);
-    // this is fast but it's not a fair comparison since it dosent get bigger with the insertions done before
-    //SEARCHES_N_TEST("Binary Search Tree", bst, ctx.food_file.filestream, N, out);
+    SEARCHES_N_TEST("Binary Search Tree", bst, ctx.food_file.filestream, N, out);
     fprintf(out, "||============== SEARCH ONLY BENCHMARK =================||\n");
 
 /**
  * Reource cleanup was causing the program to crash
  */
-cleanup:
     // inorder((BST *)bst1, (action)kvp_free);
     // inorder((BST *)rbt1, (action)kvp_free);
     // inorder((BST *)avl1, (action)kvp_free);
@@ -119,8 +116,8 @@ cleanup:
     // delete (rbt);
     // delete (avl);
     // fclose(bstShape);
-    fclose(rbtShape);
-    fclose(avlShape);
+    //fclose(rbtShape);
+    //fclose(avlShape);
 }
 
 void SEARCHES_TEST(Collection *const xs, FILE *const stream_reader, double *time, double *kCals, FILE *out)

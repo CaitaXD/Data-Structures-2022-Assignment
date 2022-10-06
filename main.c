@@ -29,7 +29,6 @@ int main(int argc, char const *argv[])
     write_output_header(xs, ctx);
     write_output_food_stats(xs, ctx);
 
-cleanup:
     fclose(ctx.output_file.filestream);
     fclose(ctx.food_file.filestream);
     fclose(ctx.calory_file.filestream);
