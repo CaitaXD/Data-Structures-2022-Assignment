@@ -5,9 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#define EMPTY (void *)INT_MIN
 typedef struct bst BST;
-
+// constructor: initializes the tree with data pointing to (void*)INT_MIN with is considered to be empty
+// NULL wasnt used becasue if data was to be interpret as a arithmetic value, NULL would be 0
 Collection *const bst_new();
 
 /**
