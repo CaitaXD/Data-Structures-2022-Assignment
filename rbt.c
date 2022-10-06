@@ -83,7 +83,7 @@ typedef struct rbt_vtable RBTVTB;
  * We must however override the height count and find functions.
  */
 RBT *const Nil = &(RBT){.color = black, .data = NULL};
-#define GET_DIR(N) (N == right((N->parent)) ? RIGHT : LEFT)
+#define GET_DIR(N) (N == right(N->parent) ? RIGHT : LEFT)
 #define NIL        Nil // NULL or Sentinel
 #define left(N)    N->child[LEFT]
 #define right(N)   N->child[RIGHT]
@@ -135,7 +135,7 @@ RBT *rbt_find(RBT *const rbt, void *const data, comparer cmp)
     for (RBT *p = rbt; p != NIL;)
     {
         CMPS++; // Null check
-        enum direction dir = cmp(data, p->data);
+        enum cmp dir = cmp(data, p->data);
 
         if (dir == EQ)
         {
@@ -238,7 +238,7 @@ void rbt_insert_fix(RBT **treeRoot, RBT *node, enum direction dir)
             node   = parent;
             parent = granps->child[dir];
         }
-    // fall through to CASE6
+// fall through to CASE6
     CASE6: // Rotate the grandparent and flip the colors
 
         rbt_rotate(treeRoot, granps, 1 - dir);

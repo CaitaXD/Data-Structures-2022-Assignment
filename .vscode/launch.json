@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [
-                ".\\1000Sorted.csv",
+                ".\\1000Shuffled.csv",
                 ".\\day1.csv",
                 ".\\output.txt",
                 ".\\log.txt",

@@ -1,4 +1,4 @@
-Calorias Calculadas para day1.csv segundo a tabela 1000Sorted.csv.
+Calorias Calculadas para day1.csv segundo a tabela 1000Shuffled.csv.
 
 150g de Activia (150 a cada 100g) = 111.00
 110g de Tangerine (110 a cada 100g) = 58.30

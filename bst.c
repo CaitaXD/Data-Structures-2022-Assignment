@@ -149,7 +149,7 @@ BST *const bst_find(BST *const bst, void *const data, comparer cmp)
     assert(bst->data != EMPTY && bst->data != NULL);
     for (BST *p = bst; p;)
     {
-        int dir = cmp(data, p->data);
+        enum cmp dir = cmp(data, p->data);
         CMPS++; // Null check
 
         if (dir == EQ)
