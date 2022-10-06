@@ -19,11 +19,13 @@
 
 #define Trace() printf("Trace: %s:%d:%s \n", __FILE__, __LINE__, __func__);
 
+// readonly pointer to a readonly sequence of chars
 typedef char const *const string;
+// function that conpares two elements
 typedef int (*comparer)(const void *, const void *);
+// functions that returns a string representation of an element
 typedef char *(*cstringfier)(void *);
-typedef void *(*mapper)(void *);
-typedef void *(*bin_func)(void *, void *);
+// function that the do something and dosent return anything
 typedef void (*action)(void *const data, ...);
 
 #define KILO 1000

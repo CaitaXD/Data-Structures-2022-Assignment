@@ -133,8 +133,8 @@ RBT *rbt_find(RBT *const rbt, void *const data, comparer cmp)
     assert(rbt->data != EMPTY && rbt->data != NIL);
     for (RBT *p = rbt; p != NIL;)
     {
-        int dir = cmp(data, p->data);
         CMPS++; // Null check
+        int dir = cmp(data, p->data);
 
         if (dir == EQ)
         {

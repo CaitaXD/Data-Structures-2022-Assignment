@@ -27,26 +27,26 @@
 
 ||============== INSERTION ONLY BENCHMARK ==============||
 ||================ Red Black Tree ================
-|| Nodes:        10000
-|| Height:       18
-|| Rotations:    6053
-|| Time taken:   0.011000
+|| Nodes:        50000
+|| Height:       20
+|| Rotations:    41071
+|| Time taken:   0.075000
 ||================ Red Black Tree ================
 ||================ AVL Tree ================
-|| Nodes:        10000
-|| Height:       14
-|| Rotations:    6060
-|| Time taken:   0.007000
+|| Nodes:        50000
+|| Height:       16
+|| Rotations:    44080
+|| Time taken:   0.060000
 ||================ AVL Tree ================
 ||============== INSERTION ONLY BENCHMARK ==============||
 
 ||============== SEARCH ONLY BENCHMARK =================||
 ||================ Red Black Tree ================
-|| Comparisons: 1240
+|| Comparisons: 6450
 || Time taken:  0.00
 ||================ Red Black Tree ================
 ||================ AVL Tree ================
-|| Comparisons: 1330
+|| Comparisons: 6800
 || Time taken:  0.00
 ||================ AVL Tree ================
 ||============== SEARCH ONLY BENCHMARK =================||
