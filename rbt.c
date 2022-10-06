@@ -33,16 +33,16 @@ struct rbt_vtable
 extern int CMPS;
 extern int ROTATIONS;
 
-RBT       *rbt_insert(RBT *const rbt, void *const data, comparer cmp);
-void       rbt_add(RBT **const this, void *const data, comparer cmp);
-void       rbt_pretty_print(RBT *const node, cstringfier tocstr, FILE *const stream);
-int        rbt_height(RBT *const rbt);
-int        rbt_count(RBT *const rbt);
-void       rbt_inorder(RBT *const rbt, action action);
-void       rbt_preorder(RBT *const rbt, action action);
-void       rbt_postorder(RBT *const rbt, action action);
-void       rbt_delete(RBT *rbt);
-RBT       *rbt_find(RBT *const rbt, void *const data, comparer cmp);
+RBT *rbt_insert(RBT *const rbt, void *const data, comparer cmp);
+void rbt_add(RBT **const this, void *const data, comparer cmp);
+void rbt_pretty_print(RBT *const node, cstringfier tocstr, FILE *const stream);
+int  rbt_height(RBT *const rbt);
+int  rbt_count(RBT *const rbt);
+void rbt_inorder(RBT *const rbt, action action);
+void rbt_preorder(RBT *const rbt, action action);
+void rbt_postorder(RBT *const rbt, action action);
+void rbt_delete(RBT *rbt);
+RBT *rbt_find(RBT *const rbt, void *const data, comparer cmp);
 
 RBTVTB *rbt_vtb_init()
 {
@@ -78,18 +78,19 @@ RBTVTB                   *rbt_vtb_init();
 typedef struct rbt_vtable RBTVTB;
 /**
  * @brief Sentinel node for the red black tree.
- * Sentinel allows to check the color direcly. 
+ * Sentinel allows to check the color direcly.
  * In place of N == NULL || N->color == black.
  * We must however override the height count and find functions.
  */
 RBT *const Nil = &(RBT){.color = black, .data = NULL};
-#define GET_DIR(N)   (N == right((N->parent)) ? RIGHT : LEFT)
-#define NIL          Nil // NULL or Sentinel
-#define left(N)      N->child[LEFT]
-#define right(N)     N->child[RIGHT]
+#define GET_DIR(N) (N == right((N->parent)) ? RIGHT : LEFT)
+#define NIL        Nil // NULL or Sentinel
+#define left(N)    N->child[LEFT]
+#define right(N)   N->child[RIGHT]
+// Be shure to declare a variable named dir iwth the result of a comparison before using this macro
 #define get_child(N) N->child[dir]
 
-int  rbt_height(RBT *const rbt)
+int rbt_height(RBT *const rbt)
 {
     if (rbt == NIL) return 0;
     return 1 + max(rbt_height(left(rbt)), rbt_height(right(rbt)));
@@ -134,7 +135,7 @@ RBT *rbt_find(RBT *const rbt, void *const data, comparer cmp)
     for (RBT *p = rbt; p != NIL;)
     {
         CMPS++; // Null check
-        int dir = cmp(data, p->data);
+        enum direction dir = cmp(data, p->data);
 
         if (dir == EQ)
         {
@@ -154,7 +155,7 @@ struct rbt_tree
     RBTVTB *vtable;
     RBT    *root; // == NIL if tree is empty
 };
-RBT *rbt_rotate(RBT **treeRoot, RBT *parent, byte dir)
+RBT *rbt_rotate(RBT **treeRoot, RBT *parent, enum direction dir)
 {
     ROTATIONS++;
     RBT *granps  = parent->parent;
@@ -182,7 +183,7 @@ RBT *rbt_rotate(RBT **treeRoot, RBT *parent, byte dir)
  * @param node Node to be inserted.
  * @param dir Direction of the node, i.e it was inserted to the left or right of its parent.
  */
-void rbt_insert_fix(RBT **treeRoot, RBT *node, byte dir)
+void rbt_insert_fix(RBT **treeRoot, RBT *node, enum direction dir)
 {
     RBT *parent = node->parent;
     RBT *granps;

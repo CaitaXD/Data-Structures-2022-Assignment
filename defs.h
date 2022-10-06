@@ -17,8 +17,8 @@
 
 #define CAST(TO, FORM)   ((TO)FORM)
 
+// prints the line number, file name and the function name
 #define Trace() printf("Trace: %s:%d:%s \n", __FILE__, __LINE__, __func__);
-
 // readonly pointer to a readonly sequence of chars
 typedef char const *const string;
 // function that conpares two elements
